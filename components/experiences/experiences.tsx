@@ -6,7 +6,7 @@ export default function Experiences() {
             </div>
             <div>
                 <h2 className="text-xl font-bold">Senior Software Engineer</h2>
-                <p className="text-lg">Lego Group</p>
+                <p className="text-lg">the LEGO Group</p>
                 <p className="text-lg">2019 - Present</p>
             </div>
         </div>
