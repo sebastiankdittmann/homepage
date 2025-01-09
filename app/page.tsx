@@ -1,7 +1,7 @@
 'use client';
 
-import CvHeader from "@/components/cv-header/cv-header";
-import Experiences from "@/components/experiences/experiences";
+import CvHeader from "@/app/components/cv-header/cv-header";
+import Experiences from "@/app/components/experiences/experiences";
 import Layout from "@/components/layout/layout";
 
 export default function Home() {
