@@ -11,7 +11,7 @@ const Sidebar = () => {
                 // state to control width and visibility
                 className={`bg-gray-800 text-white 
                     fixed h-screen transition-all 
-                    duration-300 z-10 
+                    duration-300 z-10
                     ${isOpen ? 'w-64' : 'w-0 overflow-hidden'
                 }`}>
                 {/* Sidebar content */}
@@ -39,7 +39,7 @@ const Sidebar = () => {
                 {/* Button to toggle sidebar */}
                 <div className="ml-auto">
                     <button
-                        className="bg-blue-500 hover:bg-blue-700 
+                        className="bg-gray-500 hover:bg-gray-700 
                        text-white font-bold py-2 px-4 rounded"
                         onClick={() => setIsOpen(!isOpen)}>
                         {/* Toggle icon based on isOpen state */}
