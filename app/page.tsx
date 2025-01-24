@@ -5,12 +5,11 @@ import Experiences from "@/app/components/experiences/experiences";
 import Layout from "@/components/layout/layout";
 
 export default function Home() {
-
     return (
         <div>
             <Layout>
                 <div className='flex flex-col items-center'>
-                    <div className='max-w-screen-md w-full mx-auto'>
+                    <div className='max-w-screen-md w-full mx-auto pl-14'>
                         <CvHeader/>
                         <Experiences/>
                     </div>
