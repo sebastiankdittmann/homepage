@@ -9,7 +9,7 @@ export default function Home() {
         <div>
             <Layout>
                 <div className='flex flex-col items-center'>
-                    <div className='max-w-screen-md w-full mx-auto pl-4'>
+                    <div className='max-w-screen-md w-full mx-auto'>
                         <CvHeader/>
                         <Experiences/>
                     </div>
