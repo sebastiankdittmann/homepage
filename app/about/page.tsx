@@ -11,13 +11,8 @@ export default function AboutPage() {
                         <h1 className="text-2xl font-bold">About</h1>
                     </div>
                     <div className='mt-10'>
-                        <p className="text-lg">I am a software engineer with a passion for creating high-quality
-                            software. I
-                            have experience in a wide range of technologies, including web development, mobile
-                            development, and
-                            cloud computing. I am always looking for new challenges and opportunities to learn and grow
-                            as a
-                            developer.</p>
+                        <p className="text-center">I am a passionate software engineer from Denmark. I love experimenting with new
+                        concepts and technologies, and this is my space to experiment and learn.</p>
                     </div>
                 </div>
             </div>
