@@ -1,3 +1,8 @@
+---
+title: Automating environment setup with AppleScript
+date: "2025-02-13"
+---
+
 # Automating environment setup with AppleScript
 Some part of my job is maintaining half-dead applications that are still relevant to the business, but other teams have
 already started working on their replacements. This means, I want to keep the effort to maintain these applications 
