@@ -23,6 +23,13 @@ const Sidebar = () => {
                             Home
                         </a>
                     </div>
+                    <div hidden className="mt-4">
+                        <a href="/blog"
+                           className="text-white 
+                          hover:text-gray-300">
+                            Blog
+                        </a>
+                    </div>
                     <div className="mt-4">
                         <a href="/about"
                            className="text-white 
