@@ -2,16 +2,17 @@
 
 import  SidebarHomepage from "@/components/sidebarHomepage/SidebarHomepage";
 import TextLink from "./components/TextLink/TextLink";
+import { Box } from "@chakra-ui/react";
 
 export default function Blog() {
     return (
-        < SidebarHomepage>
-            <div className='flex flex-col items-center'>
-                <div className='max-w-screen-md w-full mx-auto'>
-                    <div className="flex items-center justify-center mt-4">
+        <SidebarHomepage>
+            <Box className='flex flex-col items-center'>
+                <Box className='max-w-screen-md w-full mx-auto'>
+                    <Box className="flex items-center justify-center mt-4">
                         <h1 className="text-2xl font-bold">Welcome!</h1>
-                    </div>
-                    <div className='mt-10'>
+                    </Box>
+                    <Box className='mt-10'>
                         <p className="text-center">
                             Welcome to my blog. Here I will share my experiences and learnings from my work as a
                             software engineer. Maybe you will find some of it useful. Enjoy!
@@ -22,9 +23,9 @@ export default function Blog() {
                             header="14.06.2025"
                             text="Automating environment setup with AppleScript"/>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </ SidebarHomepage>
+                    </Box>
+                </Box>
+            </Box>
+        </SidebarHomepage>
     );
 }
