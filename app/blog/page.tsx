@@ -1,6 +1,7 @@
 'use client';
 
 import Layout from "@/components/layout/layout";
+import TextLink from "./components/TextLink/TextLink";
 
 export default function Blog() {
     return (
@@ -16,7 +17,10 @@ export default function Blog() {
                             software engineer. Maybe you will find some of it useful. Enjoy!
                         </p>
                         <ul className="text-center mt-4">
-                            <li key="apple-script">xxx: <a href={`/blog/apple-script`}>Automating environment setup with AppleScript</a></li>
+                            <TextLink
+                            href={`/blog/apple-script`}
+                            header="14.06.2025"
+                            text="Automating environment setup with AppleScript"/>
                         </ul>
                     </div>
                 </div>
