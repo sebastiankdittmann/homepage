@@ -34,7 +34,7 @@
     "**/*.tsx",
     "**/*.mdx",
     ".next/types/**/*.ts"
-  ],
+, "mdx-components.mjs"  ],
   "exclude": [
     "node_modules"
   ],

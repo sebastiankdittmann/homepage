@@ -1,7 +1,7 @@
 'use client';
 
 import  SidebarHomepage from "@/components/sidebarHomepage/SidebarHomepage";
-import TextLink from "./components/TextLink/TextLink";
+import TextLink from "./components/textLink/TextLink";
 import { Box } from "@chakra-ui/react";
 
 export default function Blog() {

@@ -1,15 +1,15 @@
 import Sidebar from "@/components/sidebar/sidebar";
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
-interface LayoutProps {
+interface SidebarHomepageProps {
     children: ReactNode;
 }
 
-export default function  SidebarHomepage({ children }: LayoutProps) {
+export default function SidebarHomepage({ children }: SidebarHomepageProps) {
     return (
-        <div>
+        <div style={{ display: "flex", minHeight: "100vh" }}>
             <Sidebar />
-            <div className='pl-4 pr-4 pb-4'>
+            <div style={{ flex: 1 }}>
                 {children}
             </div>
         </div>
