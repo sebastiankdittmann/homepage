@@ -8,6 +8,10 @@ export const components = {
                 fontSize: '2em',
                 fontWeight: 'bold',
                 margin: '1em 0',
+                textAlign: 'center',
+                maxWidth: '700px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
             }}
             {...props}
         />
@@ -18,6 +22,10 @@ export const components = {
                 fontSize: '1.5em',
                 fontWeight: 'bold',
                 margin: '1em 0',
+                textAlign: 'center',
+                maxWidth: '700px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
             }}
             {...props}
         />
@@ -28,22 +36,49 @@ export const components = {
                 fontSize: '1.2em',
                 fontWeight: 'bold',
                 margin: '1em 0',
+                textAlign: 'center',
+                maxWidth: '700px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
             }}
             {...props}
         />
     ),
     p: (props: React.ComponentProps<'p'>) => (
-        <p style={{ margin: '1em 0' }} {...props} />
+        <p
+            style={{
+                margin: '1em 0',
+                textAlign: 'left',
+                maxWidth: '700px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+            }}
+            {...props}
+        />
     ),
     ul: (props: React.ComponentProps<'ul'>) => (
         <ul
-            style={{ paddingLeft: '1.5em', margin: '1em 0' }}
+            style={{
+                paddingLeft: '1.5em',
+                margin: '1em 0',
+                textAlign: 'left',
+                maxWidth: '700px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+            }}
             {...props}
         />
     ),
     ol: (props: React.ComponentProps<'ol'>) => (
         <ol
-            style={{ paddingLeft: '1.5em', margin: '1em 0' }}
+            style={{
+                paddingLeft: '1.5em',
+                margin: '1em 0',
+                textAlign: 'left',
+                maxWidth: '700px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+            }}
             {...props}
         />
     ),
