@@ -25,12 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // Disable hydrationWarning due to usage of next-theme package: https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <Provider>
-            {children}
-          </Provider>
-        <Footer />
+        <Provider>
+          {children}
+          <Footer/>
+        </Provider>
       </body>
     </html>
   );
@@ -43,20 +44,20 @@ function Footer() {
   ];
 
   return (
-      <footer className="mt-12 text-center">
-        <div className="flex justify-center space-x-4 tracking-tight">
-          {links.map((link) => (
-              <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 dark:text-gray-500 hover:text-blue-500 transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-          ))}
-        </div>
-      </footer>
+    <footer className="mt-12 text-center">
+      <div className="flex justify-center space-x-4 tracking-tight">
+        {links.map((link) => (
+          <a
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 dark:text-gray-500 hover:text-blue-500 transition-colors duration-200"
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </footer>
   );
 }

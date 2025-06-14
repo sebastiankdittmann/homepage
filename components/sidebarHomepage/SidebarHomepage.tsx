@@ -5,7 +5,7 @@ interface LayoutProps {
     children: ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function  SidebarHomepage({ children }: LayoutProps) {
     return (
         <div>
             <Sidebar />

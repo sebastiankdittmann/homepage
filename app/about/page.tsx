@@ -1,10 +1,10 @@
 'use client';
 
-import Layout from "@/components/layout/layout";
+import  SidebarHomepage from "@/components/sidebarHomepage/SidebarHomepage";
 
 export default function AboutPage() {
     return (
-        <Layout>
+        < SidebarHomepage>
             <div className='flex flex-col items-center'>
                 <div className='max-w-screen-md w-full mx-auto'>
                     <div className="flex items-center justify-center mt-52">
@@ -16,6 +16,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </ SidebarHomepage>
     );
 }

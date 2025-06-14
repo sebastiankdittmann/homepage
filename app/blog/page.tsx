@@ -1,11 +1,11 @@
 'use client';
 
-import Layout from "@/components/layout/layout";
+import  SidebarHomepage from "@/components/sidebarHomepage/SidebarHomepage";
 import TextLink from "./components/TextLink/TextLink";
 
 export default function Blog() {
     return (
-        <Layout>
+        < SidebarHomepage>
             <div className='flex flex-col items-center'>
                 <div className='max-w-screen-md w-full mx-auto'>
                     <div className="flex items-center justify-center mt-4">
@@ -25,6 +25,6 @@ export default function Blog() {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </ SidebarHomepage>
     );
 }
