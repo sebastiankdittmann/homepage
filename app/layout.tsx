@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sebastian Dittmann",
+  title: "Seb Codes 💻",
   description: "Learn about me! 🚀",
 };
 
