@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
-import { Header } from "@/components/header/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,6 +38,20 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+function Header() {
+    return (
+        <header className="flex items-center justify-between p-4 bg-gray-800 dark:amber-700 text-white">
+            <div className="text-lg font-bold">Seb codes!</div>
+            <nav>
+                <ul className="flex space-x-4">
+                    <li><a href="/" className="hover:underline">Home</a></li>
+                    <li><a href="/about" className="hover:underline">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    );
 }
 
 function Footer() {
