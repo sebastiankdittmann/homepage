@@ -43,10 +43,11 @@ export default function RootLayout({
 function Header() {
     return (
         <header className="flex items-center justify-between p-4">
-            <div className="text-lg font-bold">Seb codes!</div>
+            <div className="text-lg font-bold pl-5">
+              <a href="/" className="hover:dark:text-amber-100 hover:text-gray-100">Seb codes</a>
+            </div>
             <nav>
-                <ul className="flex space-x-4">
-                    <li><a href="/" className="hover:underline">Home</a></li>
+                <ul className="flex space-x-4 pr-5">
                     <li><a href="/about" className="hover:underline">About</a></li>
                 </ul>
             </nav>
@@ -61,7 +62,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="mt-12 text-center">
+    <footer className="mt-12 text-center p-2">
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
           <a
