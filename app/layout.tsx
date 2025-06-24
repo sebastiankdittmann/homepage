@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Seb Codes 💻",
-  description: "Learn about me! 🚀",
+  description: "Learn with me! 🚀",
 };
 
 export default function RootLayout({
@@ -27,14 +27,32 @@ export default function RootLayout({
   return (
     // Disable hydrationWarning due to usage of next-theme package: https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}>
         <Provider>
-          {children}
+          <Header/>
+          <main className="flex-grow">
+            {children}
+          </main>
           <Footer/>
         </Provider>
       </body>
     </html>
   );
+}
+
+function Header() {
+    return (
+        <header className="flex items-center justify-between p-4">
+            <div className="text-lg font-bold pl-5">
+              <a href="/" className="hover:dark:text-amber-100 hover:text-gray-100">Seb codes</a>
+            </div>
+            <nav>
+                <ul className="flex space-x-4 pr-5">
+                    <li><a href="/about" className="hover:underline">About</a></li>
+                </ul>
+            </nav>
+        </header>
+    );
 }
 
 function Footer() {
@@ -44,7 +62,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="mt-12 text-center">
+    <footer className="mt-12 text-center p-2">
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
           <a
@@ -52,7 +70,7 @@ function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 dark:text-gray-500 hover:text-blue-500 transition-colors duration-200"
+            className="text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors duration-200"
           >
             {link.name}
           </a>

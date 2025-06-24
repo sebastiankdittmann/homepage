@@ -1,11 +1,9 @@
 'use client';
 
-import  SidebarHomepage from "@/components/sidebarHomepage/SidebarHomepage";
 import { Box } from "@chakra-ui/react";
 
 export default function AboutPage() {
     return (
-        <SidebarHomepage>
             <Box className='flex flex-col items-center'>
                 <Box className='max-w-screen-md w-full mx-auto'>
                     <Box className="flex items-center justify-center mt-20">
@@ -17,6 +15,5 @@ export default function AboutPage() {
                     </Box>
                 </Box>
             </Box>
-        </SidebarHomepage>
     );
 }
