@@ -27,12 +27,12 @@ export default function RootLayout({
   return (
     // Disable hydrationWarning due to usage of next-theme package: https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}>
         <Provider>
-          <header>
-            <Header/>
-          </header>
-          {children}
+          <Header/>
+          <main className="flex-grow">
+            {children}
+          </main>
           <Footer/>
         </Provider>
       </body>
@@ -42,7 +42,7 @@ export default function RootLayout({
 
 function Header() {
     return (
-        <header className="flex items-center justify-between p-4 bg-gray-800 dark:amber-700 text-white">
+        <header className="flex items-center justify-between p-4">
             <div className="text-lg font-bold">Seb codes!</div>
             <nav>
                 <ul className="flex space-x-4">
