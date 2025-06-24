@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
+import { Header } from "@/components/header/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,7 +17,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Seb Codes 💻",
-  description: "Learn about me! 🚀",
+  description: "Learn with me! 🚀",
 };
 
 export default function RootLayout({
@@ -29,6 +30,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Provider>
+          <header>
+            <Header/>
+          </header>
           {children}
           <Footer/>
         </Provider>
@@ -52,7 +56,7 @@ function Footer() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 dark:text-gray-500 hover:text-blue-500 transition-colors duration-200"
+            className="text-gray-500 dark:text-gray-400 hover:text-blue-500 transition-colors duration-200"
           >
             {link.name}
           </a>
