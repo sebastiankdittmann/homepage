@@ -44,11 +44,11 @@ function Header() {
     return (
         <header>
             <div className="text-lg font-bold pl-5">
-              <a href="/" className="hover:dark:text-amber-100 hover:text-gray-100">Seb codes</a>
+              <a href="/" className="hover:dark:text-amber-100 hover:text-gray-500">Seb codes</a>
             </div>
             <nav>
                 <ul className="flex space-x-4 pr-5">
-                    <li><a href="/about" className="hover:underline">About</a></li>
+                    <li><a href="/about" className="hover:dark:text-amber-100 hover:text-gray-500">About</a></li>
                 </ul>
             </nav>
         </header>
