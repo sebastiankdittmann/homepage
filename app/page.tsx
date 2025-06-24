@@ -1,6 +1,5 @@
 "use client";
 
-import SidebarHomepage from "@/components/sidebarHomepage/SidebarHomepage";
 import TextLink from "@/components/textLink/TextLink";
 import { Box } from "@chakra-ui/react";
 import { StrictMode } from "react";
@@ -9,10 +8,9 @@ export default function Home() {
     return (
         <div>
             <StrictMode>
-                <SidebarHomepage>
                     <Box className='flex flex-col items-center'>
                         <Box className='max-w-screen-md w-full mx-auto'>
-                            <Box className="flex items-center justify-center  mt-20">
+                            <Box className="flex items-center justify-center mt-20">
                                 <h1 className="text-2xl font-bold">Welcome!</h1>
                             </Box>
                             <Box className='mt-10'>
@@ -29,7 +27,6 @@ export default function Home() {
                             </Box>
                         </Box>
                     </Box>
-                </SidebarHomepage>
             </StrictMode>
         </div>
     );
