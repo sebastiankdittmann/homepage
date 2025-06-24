@@ -17,15 +17,15 @@
 }
 
 header {
-  @apply bg-[var(--background-primary)] text-[var(--foreground-primary)] font-sans;
+  @apply bg-[var(--background-primary)] text-[var(--foreground-primary)] font-sans flex items-center justify-between p-4;
 }
 
-body {
-  @apply text-[var(--foreground)] bg-[var(--background)] font-sans;
+main {
+  @apply text-[var(--foreground)] bg-[var(--background)] font-sans px-5 flex-grow;
 }
 
 footer {
-  @apply bg-[var(--background-primary)] text-[var(--foreground-primary)] font-sans;
+  @apply bg-[var(--background-primary)] text-[var(--foreground-primary)] font-sans mt-12 text-center p-2;
 }
 
 @layer utilities {
