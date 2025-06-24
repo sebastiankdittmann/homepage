@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}>
         <Provider>
           <Header/>
-          <main className="flex-grow">
+          <main>
             {children}
           </main>
           <Footer/>
@@ -42,7 +42,7 @@ export default function RootLayout({
 
 function Header() {
     return (
-        <header className="flex items-center justify-between p-4">
+        <header>
             <div className="text-lg font-bold pl-5">
               <a href="/" className="hover:dark:text-amber-100 hover:text-gray-100">Seb codes</a>
             </div>
@@ -62,7 +62,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="mt-12 text-center p-2">
+    <footer>
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
           <a
