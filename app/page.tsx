@@ -18,6 +18,9 @@ export default function Home() {
                                     Welcome to my blog. Here I will share my experiences and learnings from my work as a
                                     software engineer. Maybe you will find some of it useful. Enjoy!
                                 </p>
+                                <p className="text-center">
+                                    P.S.: You can find the source code for this blog on <a href="https://github.com/sebastiankdittmann/homepage" className="dark:text-gray-400 text-amber-600 hover:text-blue-300">Github</a>!
+                                </p>
                                 <ul className="text-center mt-4">
                                     <TextLink
                                         href={`/blog/apple-script`}
