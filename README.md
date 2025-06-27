@@ -1,5 +1,7 @@
 Welcome! Happy to see you are checking out my personal projects!
 
+This website is build with React and NextJs. I am also using MdxJs to render my blog entry markdown files.
+
 ## Getting Started
 
 First, run the development server:
