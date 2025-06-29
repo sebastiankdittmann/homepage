@@ -9,7 +9,7 @@ export const components = {
                 fontWeight: 'bold',
                 margin: '1em 0',
                 textAlign: 'center',
-                maxWidth: '700px',
+                maxWidth: '600px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
             }}
@@ -23,7 +23,7 @@ export const components = {
                 fontWeight: 'bold',
                 margin: '1em 0',
                 textAlign: 'center',
-                maxWidth: '700px',
+                maxWidth: '600px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
             }}
@@ -37,7 +37,7 @@ export const components = {
                 fontWeight: 'bold',
                 margin: '1em 0',
                 textAlign: 'center',
-                maxWidth: '700px',
+                maxWidth: '600px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
             }}
