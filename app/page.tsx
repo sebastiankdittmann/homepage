@@ -23,9 +23,9 @@ export default function Home() {
                                 </p>
                                 <ul className="text-center pt-6">
                                     <TextLink
-                                        href={`/blog/apple-script`}
-                                        header="14.06.2025"
-                                        text="Automating environment setup with AppleScript" />
+                                        href={`/blog/script-commands`}
+                                        header="29.06.2025"
+                                        text="Mac - Speed up repetitive tasks via script commands" />
                                 </ul>
                             </Box>
                         </Box>

@@ -94,10 +94,25 @@ export const components = {
             <a
                 target="_blank"
                 rel="noopener noreferrer"
+                className="dark:text-gray-400 text-amber-600 hover:text-blue-300"
                 {...props}
             />
         );
     },
+    pre: (props: React.ComponentProps<'pre'>) => (
+        <pre
+            style={{
+                padding: '1em',
+                borderRadius: '6px',
+                overflowX: 'auto',
+                maxWidth: '720px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                backgroundColor: 'var(--background-primary)',
+            }}
+            {...props}
+        />
+    ),
 };
 
 export function useMDXComponents() {
