@@ -94,7 +94,7 @@ export const components = {
             <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="dark:text-gray-400 text-amber-600 hover:text-blue-300"
+                className=" text-amber-600 hover:text-blue-300"
                 {...props}
             />
         );

@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Seb Codes 💻",
+  title: "Seb codes 💻",
   description: "Learn with me! 🚀",
 };
 
