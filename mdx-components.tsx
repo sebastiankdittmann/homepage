@@ -48,7 +48,7 @@ export const components = {
         <p
             style={{
                 margin: '1em 0',
-                textAlign: 'left',
+                textAlign: 'justify',
                 maxWidth: '700px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
