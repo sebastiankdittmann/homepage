@@ -13,7 +13,7 @@ export default function AboutPage() {
                     <Text>I am a passionate software engineer from Denmark. I love experimenting with new
                         concepts and technologies, and this is my space to experiment and learn.</Text>
                     <Text className="mt-4">
-                        You can find the source code for this blog on <a href="https://github.com/sebastiankdittmann/homepage" className="dark:text-gray-400 text-amber-600 hover:text-blue-300">Github</a>!
+                        You can find the source code for this blog on <a href="https://github.com/sebastiankdittmann/homepage" className="dark:text-amber-500 text-amber-600 hover:text-blue-300">Github</a>!
                     </Text>
                 </Box>
             </Box>
