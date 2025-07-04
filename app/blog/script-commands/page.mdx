@@ -8,9 +8,12 @@ Here is how I did that:
 As search bar I am using [Raycast](https://www.raycast.com/) as it comes with a lot more customization than the standard Spotlight search bar, but according to this [Stack Overflow post](https://stackoverflow.com/questions/2877741/how-to-run-a-shell-script-using-spotlight), you can also execute scripts from Spotlight. You will likely have to put some extra work in it, though, to make it work as smoothly as it works with Raycast.
 
 The first thing we need to do is to create a _script command_ in the search bar. To do so, press `Command + Space` to open the search bar, then select the configuration menu by clicking on the Raycast symbol in the bottom left corner and select _Settings_ from the pop up menu.
+
 From the tabs in the top, select _extensions_, which will show you another set of tabs below. Here, select _Scripts_.
 Start the creation of a new script by either pressing `Command + N`, or selecting `+` in the _Extensions_ menu, and then selecting _Create Script Command_ from the context menu.
+
 Fill in a name and the optional fields as you wish, then press _Create Script_ or `Command + Enter`.
+
 Select a location to store your new script. I like collect my scripts in a central folder, for example `~\src\scripts`.
 ## The script
 As an example, I am using a script I created to handle incoming support requests from users for a legacy application I have been maintaining for a while.
@@ -24,8 +27,11 @@ tell app "Terminal"
 end tell
 ```
 The command `tell`, together with the final command `end tell`, indicate that all instructions wrapped by this statement should be sent to the terminal application.
+
 We declare that we want to interact with the application "Terminal" via `tell app "Terminal"`, followed by the command `activate` to launch the app.
+
 We then tell the terminal to execute a shell script via the commands `do script "some shell script"`.
+
 In this case, the shell script navigates to a certain location containing the support script required for my task, such as a repository. It then sets an environmental variable required for the final shell scripts interaction with AWS, followed by said scripts execution `./create-batch.sh create`. 
 ## The execution
 Once the script is created and saved, we can now run our newly created script command from anywhere on our machine simply by launching our search bar via `Command + Space`, and then starting to type the name of the script command we just created. The script command will then be executed, performing what ever task we told it do.
