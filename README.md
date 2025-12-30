@@ -22,5 +22,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Testing
+
+This project uses Jest for unit testing. To run the tests:
+
+```bash
+npm test
+# or to run tests in watch mode
+npm run test:watch
+```
+
+The test suite includes:
+- MDX page parsing validation to ensure blog posts are correctly formatted
+- Component tests for the TextLink component
+- Unit tests for blog entry sorting functionality
+
+Tests are automatically run as part of the CI/CD pipeline before deployment.
+
 ## Creating blogs via Markdown
 Documentation for creating blogs via markdown can be found [here](https://nextjs.org/docs/app/building-your-application/configuring/mdx).
