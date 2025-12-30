@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,11 +45,11 @@ function Header() {
     return (
         <header>
             <div className="text-lg font-bold pl-5">
-              <a href="/" className="hover:dark:text-amber-100 hover:text-gray-500">Seb codes</a>
+              <Link href="/" className="hover:dark:text-amber-100 hover:text-gray-500">Seb codes</Link>
             </div>
             <nav>
                 <ul className="flex space-x-4 pr-5">
-                    <li><a href="/about" className="hover:dark:text-amber-100 hover:text-gray-500">About</a></li>
+                    <li><Link href="/about" className="hover:dark:text-amber-100 hover:text-gray-500">About</Link></li>
                 </ul>
             </nav>
         </header>
