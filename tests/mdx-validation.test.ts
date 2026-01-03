@@ -67,11 +67,15 @@ describe('MDX Configuration Validation', () => {
     // Check for blockquotes
     if (/^>\s/m.test(content)) elements.add('blockquote');
 
-    // Check for emphasis (italic)
-    if (/(\*[^*]+\*|_[^_]+_)/.test(content)) elements.add('em');
+    // Check for emphasis (italic) - match single * or _ not followed/preceded by another
+    if (/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/.test(content) || /(?<!_)_(?!_)([^_]+)_(?!_)/.test(content)) {
+      elements.add('em');
+    }
 
-    // Check for strong (bold)
-    if (/(\*\*[^*]+\*\*|__[^_]+__)/.test(content)) elements.add('strong');
+    // Check for strong (bold) - match double ** or __
+    if (/\*\*([^*]|\*(?!\*))+\*\*/.test(content) || /__([^_]|_(?!_))+__/.test(content)) {
+      elements.add('strong');
+    }
 
     // Check for images
     if (/!\[.*?\]\(.*?\)/.test(content)) elements.add('img');
@@ -89,8 +93,30 @@ describe('MDX Configuration Validation', () => {
       elements.add('td');
     }
 
-    // Paragraphs are implicit - if there's text content that's not part of other elements
-    if (content.trim().length > 0) {
+    // Paragraphs are implicit in MDX - if there's regular text content, 'p' will be used
+    // We detect this by checking if there's text that's not just headings, lists, or code blocks
+    const hasTextContent = content
+      .split(/\n/)
+      .some(line => {
+        const trimmedLine = line.trim();
+        // Skip empty lines
+        if (trimmedLine.length === 0) return false;
+        // Skip headings
+        if (/^#{1,6}\s/.test(trimmedLine)) return false;
+        // Skip list items
+        if (/^[-*+]\s/.test(trimmedLine)) return false;
+        if (/^\d+\.\s/.test(trimmedLine)) return false;
+        // Skip blockquotes
+        if (/^>/.test(trimmedLine)) return false;
+        // Skip code fences
+        if (/^```/.test(trimmedLine)) return false;
+        // Skip horizontal rules
+        if (/^(-{3,}|\*{3,}|_{3,})$/.test(trimmedLine)) return false;
+        // If we got here, it's likely paragraph content
+        return true;
+      });
+    
+    if (hasTextContent) {
       elements.add('p');
     }
 
