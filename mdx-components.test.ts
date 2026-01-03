@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { components } from '../mdx-components';
+import { components } from './mdx-components';
 
 /**
  * MDX Configuration Validation Tests
