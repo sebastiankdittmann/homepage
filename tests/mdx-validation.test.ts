@@ -2,6 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import { components } from '../mdx-components';
 
+/**
+ * MDX Configuration Validation Tests
+ * 
+ * Ensures all MDX files use only Markdown syntax that has corresponding
+ * component configurations in mdx-components.tsx.
+ * 
+ * Requirements:
+ * - Node.js 12+ (for lookbehind regex assertions)
+ * - This project uses Node.js 20+ as specified in package.json
+ */
 describe('MDX Configuration Validation', () => {
   const blogDir = path.join(process.cwd(), 'app', 'blog');
   const configuredComponents = Object.keys(components);
