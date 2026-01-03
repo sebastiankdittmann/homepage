@@ -16,6 +16,28 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for MDX changes
+        id: mdx-changes
+        run: |
+          # Check if MDX files or mdx-components files have changed
+          # Use the base ref from GitHub context for reliable comparison
+          BASE_REF="${{ github.event.pull_request.base.sha }}"
+          HEAD_REF="${{ github.sha }}"
+          
+          if [ -z "$BASE_REF" ]; then
+            # Fallback if PR context not available
+            echo "mdx_changed=true" >> $GITHUB_OUTPUT
+            echo "Unable to determine base - running all tests"
+          elif git diff --name-only "$BASE_REF" "$HEAD_REF" | grep -E '\.(mdx|md)$|mdx-components\.(tsx|test\.ts)$'; then
+            echo "mdx_changed=true" >> $GITHUB_OUTPUT
+            echo "MDX files or mdx-components changed - will run MDX validation"
+          else
+            echo "mdx_changed=false" >> $GITHUB_OUTPUT
+            echo "No MDX changes detected - skipping MDX validation"
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,7 +49,14 @@ jobs:
         run: npm ci
 
       - name: Run tests with coverage
-        run: npm run test:ci
+        run: |
+          if [ "${{ steps.mdx-changes.outputs.mdx_changed }}" == "true" ]; then
+            echo "Running all tests including MDX validation"
+            npm run test:ci
+          else
+            echo "Running tests excluding MDX validation"
+            npm run test:ci -- --testPathIgnorePatterns='.*mdx-components\.test\.ts$'
+          fi
 
       - name: Generate test summary
         if: always()
