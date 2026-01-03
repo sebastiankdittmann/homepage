@@ -30,6 +30,8 @@ This project uses Jest for unit testing. To run the tests:
 npm test
 # or to run tests in watch mode
 npm run test:watch
+# or to run tests with coverage (as used in CI)
+npm run test:ci
 ```
 
 The test suite includes:
@@ -37,7 +39,9 @@ The test suite includes:
 - Component tests for the TextLink component
 - Unit tests for blog entry sorting functionality
 
-Tests are automatically run as part of the CI/CD pipeline before deployment.
+Tests are automatically run as part of the CI/CD pipeline:
+- On pull requests: Tests run with coverage reporting, results are posted as a comment on the PR
+- Before deployment: Tests are executed to ensure code quality
 
 ## Creating blogs via Markdown
 Documentation for creating blogs via markdown can be found [here](https://nextjs.org/docs/app/building-your-application/configuring/mdx).
