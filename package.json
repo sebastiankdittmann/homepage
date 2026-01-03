@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:ci": "jest --coverage --json --outputFile=test-results.json --testLocationInResults --coverageReporters=json-summary --coverageReporters=text"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.30.0",
