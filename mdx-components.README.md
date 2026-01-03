@@ -29,7 +29,11 @@ The test checks for these Markdown elements:
 
 This test runs:
 - Locally when you run `npm test`
-- In CI/CD on every pull request via the `pr-tests.yml` workflow
+- In CI/CD on pull requests via the `pr-tests.yml` workflow
+- **Performance optimization**: In CI, this test only runs when:
+  - MDX files (`.mdx` or `.md`) are added or modified
+  - `mdx-components.tsx` or `mdx-components.test.ts` are modified
+  - Other tests always run regardless
 - It will **block PR merges** if validation fails
 
 ## Example Error
