@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from '@/components/ui/provider';
 import TextLink from '@/components/textLink/TextLink';
 import '@testing-library/jest-dom';
+import { BlockEntry } from '@/types/BlockEntry';
 
 // Mock next/navigation
 jest.mock('next/navigation', () => ({
@@ -12,7 +13,7 @@ jest.mock('next/navigation', () => ({
 }));
 
 describe('TextLink Component', () => {
-  const mockProps = {
+  const mockProps : BlockEntry = {
     href: '/blog/test-post',
     publishDate: new Date(2025, 5, 29), // June 29, 2025
     text: 'Test Blog Post',
