@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../components";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+}
 
 :root {
   --background: #ffffff;
