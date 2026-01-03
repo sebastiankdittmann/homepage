@@ -68,12 +68,14 @@ describe('MDX Configuration Validation', () => {
     if (/^>\s/m.test(content)) elements.add('blockquote');
 
     // Check for emphasis (italic) - match single * or _ not followed/preceded by another
+    // Note: This requires Node.js 12+ for lookbehind assertions
     if (/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/.test(content) || /(?<!_)_(?!_)([^_]+)_(?!_)/.test(content)) {
       elements.add('em');
     }
 
     // Check for strong (bold) - match double ** or __
-    if (/\*\*([^*]|\*(?!\*))+\*\*/.test(content) || /__([^_]|_(?!_))+__/.test(content)) {
+    // Simplified pattern that works for most common cases
+    if (/\*\*[^*]+\*\*/.test(content) || /__[^_]+__/.test(content)) {
       elements.add('strong');
     }
 
@@ -83,8 +85,8 @@ describe('MDX Configuration Validation', () => {
     // Check for horizontal rules
     if (/^(-{3,}|\*{3,}|_{3,})$/m.test(content)) elements.add('hr');
 
-    // Check for tables
-    if (/\|.*\|/.test(content)) {
+    // Check for tables - match lines that start and end with |
+    if (/^\|.*\|$/m.test(content)) {
       elements.add('table');
       elements.add('thead');
       elements.add('tbody');
