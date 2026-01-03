@@ -1,10 +1,11 @@
 "use client";
 
 import TextLink from "@/components/textLink/TextLink";
+import { BlockEntry } from "@/types/BlockEntry";
 import { Box, List, Text } from "@chakra-ui/react";
 import { StrictMode } from "react";
 
-const blogEntries = [
+const blogEntries : BlockEntry[] = [
     {
         href: `/blog/script-commands`,
         publishDate: new Date(2025, 5, 29),
