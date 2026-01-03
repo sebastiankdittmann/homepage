@@ -11,6 +11,8 @@
 # CI/CD
 - CI/CD pipelines are configured using GitHub Actions.
 - Prefer using existing workflow templates for consistency.
+- Write consice and clear commit messages following the Conventional Commits specification.
+- Write consice and clear pull request titles and descriptions, linking to relevant issues when applicable.
 
 # Documentation
 - Extend ReadMe files with relevant usage examples and setup instructions.
