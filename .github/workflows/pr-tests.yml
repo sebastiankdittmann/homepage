@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Run tests with coverage
-        run: npm test -- --coverage --json --outputFile=test-results.json --testLocationInResults --coverageReporters=json-summary --coverageReporters=text
+        run: npm run test:ci
 
       - name: Generate test summary
         if: always()
@@ -91,7 +91,7 @@ jobs:
             });
             
             const botComment = comments.find(comment => 
-              comment.user.type === 'Bot' && 
+              comment.user.login === 'github-actions[bot]' && 
               comment.body.includes('Test Results')
             );
             
@@ -116,7 +116,11 @@ jobs:
         if: always()
         run: |
           if [ -f test-results.json ]; then
-            if ! grep -q '"success":true' test-results.json; then
+            # Install jq if not available
+            if ! command -v jq &> /dev/null; then
+              sudo apt-get update && sudo apt-get install -y jq
+            fi
+            if ! jq -e '.success == true' test-results.json > /dev/null; then
               echo "Tests failed!"
               exit 1
             fi
