@@ -23,7 +23,15 @@ jobs:
         id: mdx-changes
         run: |
           # Check if MDX files or mdx-components files have changed
-          if git diff --name-only origin/main...HEAD | grep -E '\.(mdx|md)$|mdx-components\.(tsx|test\.ts)$'; then
+          # Use the base ref from GitHub context for reliable comparison
+          BASE_REF="${{ github.event.pull_request.base.sha }}"
+          HEAD_REF="${{ github.sha }}"
+          
+          if [ -z "$BASE_REF" ]; then
+            # Fallback if PR context not available
+            echo "mdx_changed=true" >> $GITHUB_OUTPUT
+            echo "Unable to determine base - running all tests"
+          elif git diff --name-only "$BASE_REF" "$HEAD_REF" | grep -E '\.(mdx|md)$|mdx-components\.(tsx|test\.ts)$'; then
             echo "mdx_changed=true" >> $GITHUB_OUTPUT
             echo "MDX files or mdx-components changed - will run MDX validation"
           else
@@ -47,7 +55,7 @@ jobs:
             npm run test:ci
           else
             echo "Running tests excluding MDX validation"
-            npm run test:ci -- --testPathIgnorePatterns='mdx-components.test.ts'
+            npm run test:ci -- --testPathIgnorePatterns='.*mdx-components\.test\.ts$'
           fi
 
       - name: Generate test summary
