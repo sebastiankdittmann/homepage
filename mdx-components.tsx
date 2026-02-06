@@ -113,6 +113,20 @@ export const components = {
             {...props}
         />
     ),
+    code: (props: React.ComponentProps<'code'>) => (
+        <code
+            style={{
+                padding: '0.2em 0.4em',
+                borderRadius: '3px',
+                fontSize: '0.9em',
+                backgroundColor: 'var(--background-secondary)',
+            }}
+            {...props}
+        />
+    ),
+    em: (props: React.ComponentProps<'em'>) => (
+        <em style={{ fontStyle: 'italic' }} {...props} />
+    ),
 };
 
 export function useMDXComponents() {
