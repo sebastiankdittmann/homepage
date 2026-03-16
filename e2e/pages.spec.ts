@@ -41,10 +41,10 @@ test.describe("About page", () => {
       page.getByRole("main").getByText("About")
     ).toBeVisible();
     await expect(
-      page.getByText("passionate software engineer from Denmark", { exact: false })
+      page.getText("passionate software engineer from Denmark", { exact: false })
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: /github/i })
+      page.getByRole("main").getByRole("link", { name: /github/i })
     ).toHaveAttribute("href", "https://github.com/sebastiankdittmann/homepage");
   });
 });
