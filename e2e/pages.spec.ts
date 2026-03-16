@@ -41,7 +41,7 @@ test.describe("About page", () => {
       page.getByRole("main").getByText("About")
     ).toBeVisible();
     await expect(
-      page.getText("passionate software engineer from Denmark", { exact: false })
+      page.getByText("passionate software engineer from Denmark", { exact: false })
     ).toBeVisible();
     await expect(
       page.getByRole("main").getByRole("link", { name: /github/i })
