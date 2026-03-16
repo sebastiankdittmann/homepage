@@ -18,7 +18,7 @@ const config = {
         '**/*.{spec,test}.{js,jsx,ts,tsx}'
     ],
     transformIgnorePatterns: ['/node_modules/'],
-    testPathIgnorePatterns: ['<rootDir>/node_modules/'],
+    testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/e2e/'],
     collectCoverageFrom: [
         'app/**/*.{js,jsx,ts,tsx}',
         'components/**/*.{js,jsx,ts,tsx}',
