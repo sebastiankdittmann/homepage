@@ -12,7 +12,7 @@
     "test:ci": "jest --coverage --json --outputFile=test-results.json --testLocationInResults --coverageReporters=json-summary --coverageReporters=text"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.30.0",
+    "@chakra-ui/react": "^3.34.0",
     "@emotion/react": "^11.14.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
