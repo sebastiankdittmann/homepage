@@ -24,8 +24,12 @@ test.describe("Home page", () => {
       page.getByRole("link", { name: "Seb codes" })
     ).toBeVisible();
     await expect(page.getByRole("link", { name: "About" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "linkedin" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "github" })).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /linkedin/i })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /github/i })
+    ).toBeVisible();
   });
 });
 
@@ -40,7 +44,7 @@ test.describe("About page", () => {
       page.getByText("passionate software engineer from Denmark", { exact: false })
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Github", exact: true })
+      page.getByRole("link", { name: /github/i })
     ).toHaveAttribute("href", "https://github.com/sebastiankdittmann/homepage");
   });
 });
